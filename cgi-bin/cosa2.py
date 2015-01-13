@@ -30,7 +30,7 @@ htmlhelp.print_back()
 
 syshelp.exec_on_background("shell/roslaunch_shell.sh",environment=os.environ)
 
-print ('This command is exec in background, you can see the log on <a href="/cgi-bin/log/roslaunch.log">log/roslaunch.log</a>')
+print ('<p>This command is exec in background, you can see the log on <a href="/cgi-bin/log/roslaunch.log">log/roslaunch.log</a></p>')
 
 htmlhelp.print_footer()
 

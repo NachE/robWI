@@ -8,6 +8,7 @@ stop_ros () {
     rosnode kill $i;
     done
 
+    rosnode kill -a
     #stop roscore
     killall roscore
 }

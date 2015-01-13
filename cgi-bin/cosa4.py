@@ -8,9 +8,7 @@ htmlhelp.print_header()
 
 htmlhelp.print_back()
 
-print 'hi, this is a module :D'
-
-syshelp.exec_and_print_stdout('cat /proc/cpuinfo')
+syshelp.exec_and_print_stdout('tail -n 500 log/roslaunch.log')
 
 htmlhelp.print_footer()
 

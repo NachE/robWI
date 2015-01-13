@@ -2,11 +2,11 @@
 
 import subprocess, os
 
-def exec_and_print_stdout(command):
+def exec_and_print_stdout(command,environment=os.environ):
 	s='<p>running ' + command + '...</p>'
 	print (s)
 	command = command.split()
-	p = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, env=os.environ.copy())
+	p = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, env=environment)
 	print ('<plaintext>')
 	for line in p.stdout:
 		print (line),
@@ -19,3 +19,11 @@ def exec_and_print_stdout(command):
 	print ('</plaintext>')
 
 	print ('<p>Done</p>')
+
+
+def exec_on_background(command,environment=os.environ):
+	s='<p>running ' + command + '...</p>'
+	print (s)
+	command = command.split()
+	pid = os.spawnvpe(os.P_NOWAIT, command[0], command, env=environment)
+	return pid	
